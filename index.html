@@ -1028,13 +1028,20 @@
                 grid-column: 1 !important;
                 grid-row: auto !important;
                 text-align: left !important;
-                padding: 0 !important;
             }
 
             .timeline-item .timeline-date {
                 order: 1;
                 margin-top: 0.5rem;
                 margin-bottom: 0;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .timeline-item .timeline-content {
+                padding: 1.5rem !important;
+                margin-left: 0;
+                margin-right: 0;
             }
 
             .timeline-dot {
@@ -1096,20 +1103,38 @@
             }
 
             .contact-info {
+                display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 gap: 1rem;
                 width: 100%;
+                padding: 0 1rem;
             }
 
             .contact-item {
-                width: 100%;
-                max-width: 300px;
+                width: 90%;
+                max-width: 400px;
                 justify-content: center;
+                padding: 1rem 1.5rem;
             }
 
             .contact-section {
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 1rem !important;
+                border-radius: 20px;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
 
             .hero-stats {
@@ -1131,7 +1156,9 @@
             }
 
             .timeline-content {
-                padding: 1.25rem;
+                padding: 1.5rem;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
             }
 
             .timeline-company {
