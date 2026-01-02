@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Senior Digital Marketing</title>
+    <meta name="description"
+        content="Digital Marketing Strategist with 7+ years of experience. AI-Powered Marketing, E-commerce, and Creative Technology.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            /* Colors matching CV design */
+            --primary-orange: #E85A4F;
+            --primary-coral: #F06449;
+            --primary-red: #D64045;
+            --accent-teal: #1A8F8F;
+            --accent-cyan: #2BB3B3;
+            --accent-yellow: #F5B841;
+
+            --bg-cream: #FBF8F3;
+            --bg-white: #FFFFFF;
+            --bg-light: #F7F4EF;
+            --bg-dark: #2D3436;
+
+            --text-dark: #2D3436;
+            --text-body: #4A4A4A;
+            --text-muted: #7D7D7D;
+            --text-light: #FFFFFF;
+
+            --gradient-main: linear-gradient(135deg, #F5B841 0%, #E85A4F 50%, #D64045 100%);
+            --gradient-warm: linear-gradient(135deg, #F06449 0%, #D64045 100%);
+            --gradient-teal: linear-gradient(135deg, #1A8F8F 0%, #2BB3B3 100%);
+
+            --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 20px 50px rgba(232, 90, 79, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-cream);
+            color: var(--text-body);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        /* Decorative Elements */
+        .shape-orange {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-main);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .shape-teal {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-teal);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.25rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(251, 248, 243, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-body);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-main);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-coral);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .shape-orange {
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+        }
+
+        .hero .shape-teal {
+            bottom: 10%;
+            left: 5%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            position: relative;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: var(--bg-white);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-teal);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .hero-tag::before {
+            content: '●';
+            color: var(--accent-teal);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 .highlight {
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-vision {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: var(--bg-white);
+            border-left: 4px solid var(--primary-coral);
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-card);
+            font-style: italic;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat {
+            padding: 1.5rem 2rem;
+            background: var(--bg-white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-card);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-warm);
+            color: white;
+            box-shadow: 0 10px 30px rgba(232, 90, 79, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(232, 90, 79, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-white);
+            color: var(--text-dark);
+            border: 2px solid var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-dark);
+            color: var(--text-light);
+        }
+
+        /* Profile Card */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            position: relative;
+            width: 420px;
+            padding: 0;
+            background: var(--bg-white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+        }
+
+        .profile-header {
+            background: var(--gradient-main);
+            padding: 2.5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--bg-white);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-body {
+            padding: 1rem 2rem 2.5rem;
+            text-align: center;
+        }
+
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .profile-title {
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .profile-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .profile-contact a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .profile-contact a:hover {
+            color: var(--primary-coral);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--bg-white);
+            border: 2px solid var(--primary-coral);
+            border-radius: 50px;
+            color: var(--primary-coral);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Story Section */
+        .story-section {
+            background: var(--bg-white);
+            border-radius: 30px;
+            padding: 4rem;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-section .shape-orange {
+            top: -150px;
+            right: -150px;
+            opacity: 0.08;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .story-card {
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--bg-light);
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .story-card h3 .emoji {
+            font-size: 1.75rem;
+        }
+
+        .story-card p {
+            color: var(--text-body);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .story-highlight {
+            background: var(--gradient-main);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-main);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .achievement-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .achievement-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-company {
+            color: var(--accent-teal);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Skills */
+        .skills-container {
+            background: var(--bg-white);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-category {
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--bg-light);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            background: var(--bg-cream);
+        }
+
+        .skill-category h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .skill-level {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--gradient-teal);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.25rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: var(--bg-white);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-body);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--gradient-warm);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: var(--gradient-main);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2.5rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            grid-column: 1;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: left;
+            padding-left: 3rem;
+            align-self: start;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: left;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: right;
+            padding-right: 3rem;
+            align-self: start;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            grid-row: 1;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-warm);
+            border-radius: 50%;
+            border: 4px solid var(--bg-cream);
+            box-shadow: 0 0 0 4px rgba(232, 90, 79, 0.2);
+        }
+
+        .timeline-content {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .timeline-company {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+
+        .timeline-role {
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-achievement {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--gradient-main);
+            border-radius: 50px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--text-body);
+            font-size: 0.95rem;
+        }
+
+        .timeline-description ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .timeline-description li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-description li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-coral);
+            font-weight: bold;
+        }
+
+        .timeline-date span {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-light);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--text-body);
+        }
+
+        /* Learning Journey */
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .learning-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .learning-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .learning-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-main);
+            opacity: 0.1;
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .learning-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .learning-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .learning-topics {
+            list-style: none;
+        }
+
+        .learning-topics li {
+            padding: 0.75rem 0;
+            color: var(--text-body);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .learning-topics li:last-child {
+            border-bottom: none;
+        }
+
+        .learning-status {
+            padding: 0.25rem 0.75rem;
+            background: var(--gradient-teal);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .learning-vision {
+            background: var(--bg-white);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-card);
+            border-left: 5px solid var(--primary-coral);
+        }
+
+        .learning-vision p {
+            font-size: 1.1rem;
+            color: var(--text-body);
+        }
+
+        .learning-vision strong {
+            color: var(--primary-coral);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--gradient-main);
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item:hover {
+            background: white;
+            color: var(--primary-coral);
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            color: var(--text-muted);
+            background: var(--bg-white);
+        }
+
+        footer a {
+            color: var(--primary-coral);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                padding-left: 50px;
+            }
+
+            .timeline-item .timeline-content,
+            .timeline-item .timeline-date {
+                grid-column: 1 !important;
+                text-align: left !important;
+                padding: 0 !important;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .story-section {
+                padding: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+
+            .stat {
+                flex: 1;
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#value">Differentiators</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="shape-orange"></div>
+        <div class="shape-teal"></div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-tag">Open to Work</div>
+                <h1>Hello, I'm <span class="highlight">Trung</span></h1>
+                <p class="hero-subtitle">Senior Digital Marketing | AI & MarTech Enthusiast</p>
+
+                <div class="hero-vision">
+                    "Senior Digital Marketer with 7+ years of experience bridging the gap between Creative Storytelling
+                    and Technical Precision. My core vision is to redefine marketing efficiency by leveraging AI
+                    Automation (Python, LLMs) and data-driven insights. Proven track record in scaling brands across
+                    E-commerce and Education sectors by optimizing both human creativity and operational workflows."
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">7+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">200%</div>
+                        <div class="stat-label">Sales Growth</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$170K</div>
+                        <div class="stat-label">Revenue/Quarter</div>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <a href="#experience" class="btn btn-secondary">View Portfolio</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-photo">
+                            <img src="Avatar.png" alt="Tô Chánh Trung">
+                        </div>
+                    </div>
+                    <div class="profile-body">
+                        <h2 class="profile-name">Tô Chánh Trung</h2>
+                        <p class="profile-title">Senior Digital Marketing | AI & MarTech</p>
+                        <div class="profile-contact">
+                            <span>📞 0916.409.074</span>
+                            <a href="mailto:tochanhtrungtct@gmail.com">✉️ tochanhtrungtct@gmail.com</a>
+                            <span>📍 District 8, Ho Chi Minh City</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story">
+        <div class="section-header">
+            <span class="section-tag">My Story</span>
+            <h2 class="section-title">7 Years Journey in Digital Marketing</h2>
+            <p class="section-subtitle">From Digital Marketer to Senior Position, and a new journey with AI & Art</p>
+        </div>
+
+        <div class="story-section">
+            <div class="shape-orange"></div>
+            <div class="story-grid">
+                <div class="story-card">
+                    <h3><span class="emoji">🌏</span> Starting with International E-commerce</h3>
+                    <p>
+                        In 2018, I began my Digital Marketing journey at Mekong Data with the Enabay.com project -
+                        an e-commerce platform serving Hong Kong market specializing in tech, fashion, and cosmetics.
+                    </p>
+                    <p>
+                        Then came MARC Fashion - where I helped achieve <strong>200% online sales growth</strong>
+                        and hit targets of <strong>$170K USD/quarter</strong> with a budget of $4-8K/month.
+                    </p>
+                    <div class="story-highlight">
+                        "Success doesn't come from running great ads, but from understanding customers
+                        and optimizing every touchpoint in the customer journey."
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <h3><span class="emoji">💄</span> Growth at Sakura Beauty</h3>
+                    <p>
+                        From 2021-2023, I took on the role of Digital Marketing Manager for 4 cosmetic brands:
+                        Sakura, Hoa Anh Dao, Yumeisakura, and Genki Derma. The biggest challenge was
+                        balancing between brand building and performance.
+                    </p>
+                    <p>
+                        In 2020, I was honored with the <strong>Excellent Individual</strong> award - Recognition
+                        for continuous efforts in optimizing campaigns and developing the team.
+                    </p>
+
+                    <h3 style="margin-top: 2rem;"><span class="emoji">🎯</span> Present & Future</h3>
+                    <p>
+                        Since 10/2023, I joined ViecLam24H and recently MAAC Vietnam. Alongside my work,
+                        I'm developing skills in <strong>AI Agent</strong> and <strong>art foundation</strong>
+                        - aiming to become a Creative Technologist.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section id="value">
+        <div class="section-header">
+            <span class="section-tag">Differentiators</span>
+            <h2 class="section-title">What Can I Do For Your Company?</h2>
+            <p class="section-subtitle">What sets me apart from other candidates</p>
+        </div>
+
+        <div class="story-section">
+            <div class="story-grid">
+                <div class="story-card">
+                    <h3><span class="emoji">🎯</span> Multi-Channel Performance Marketing</h3>
+                    <p>
+                        Campaign management across <strong>Google, Facebook, TikTok, Zalo, LinkedIn</strong>.
+                        Optimizing ROAS, CPA, and conversion rates. Experience managing budgets from $4-8K/month.
+                    </p>
+                    <p>
+                        <strong>SEM/SEO:</strong> Keyword research, on-page optimization, content strategy.
+                        <strong>Email Marketing:</strong> Automation, segmentation, A/B testing.
+                    </p>
+                </div>
+
+                <div class="story-card">
+                    <h3><span class="emoji">🤖</span> AI-Powered Marketing</h3>
+                    <p>
+                        <strong>AI Agent Development:</strong> Building AI agents to support content creation and
+                        marketing
+                        automation.
+                    </p>
+                    <p>
+                        <strong>Prompt Engineering:</strong> Creating prompt templates for team content preparation,
+                        outlines, and Content Marketing ideas.
+                    </p>
+                    <p>
+                        <strong>Automation:</strong> Workflows and scripts for marketing tasks.
+                    </p>
+                </div>
+
+                <div class="story-card">
+                    <h3><span class="emoji">🎨</span> Art & Creative Foundation</h3>
+                    <p>
+                        Developing art foundation: <strong>2D Sketch, 3D Modeling & Sculpting</strong>.
+                        Combining Marketing skills with Creative to create unique value.
+                    </p>
+                    <p>
+                        Understanding Creative team language to bridge the gap between Marketing and Production.
+                    </p>
+                </div>
+
+                <div class="story-card">
+                    <h3><span class="emoji">💼</span> Multi-Industry Experience</h3>
+                    <p>
+                        Hands-on experience across 5 different industries:
+                    </p>
+                    <p>
+                        • <strong>International E-commerce</strong> (Enabay.com - Hong Kong)<br>
+                        • <strong>Fashion</strong> (MARC Fashion)<br>
+                        • <strong>Cosmetics</strong> (Sakura Beauty - 4 brands)<br>
+                        • <strong>Recruitment</strong> (Sieu Viet Group - 4 websites)<br>
+                        • <strong>Creative Education</strong> (MAAC Vietnam - VFX, 3D, Game Art)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="section-header">
+            <span class="section-tag">Achievements</span>
+            <h2 class="section-title">Key Milestones</h2>
+            <p class="section-subtitle">Results recognized throughout my career journey</p>
+        </div>
+
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">📈</div>
+                <div class="achievement-value">200%</div>
+                <div class="achievement-title">Online Sales Growth</div>
+                <div class="achievement-company">MARC Fashion • 2019</div>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon">🏆</div>
+                <div class="achievement-value">Top 1</div>
+                <div class="achievement-title">Excellent Individual Award</div>
+                <div class="achievement-company">Sakura Beauty Vietnam • 2020</div>
+            </div>
+
+            <div class="achievement-card">
+                <div class="achievement-icon">👥</div>
+                <div class="achievement-value">Team</div>
+                <div class="achievement-title">Excellent Team Growing Award</div>
+                <div class="achievement-company">ViecLam24H • 2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <span class="section-tag">AI & Automation</span>
+            <h2 class="section-title">AI Applications in Marketing</h2>
+            <p class="section-subtitle">Building automation systems to increase work efficiency</p>
+        </div>
+
+        <div class="story-section">
+            <div class="story-grid">
+                <!-- TOOLS -->
+                <div class="story-card">
+                    <h3><span class="emoji">🤖</span> Automation Systems</h3>
+                    <p><strong>What I've Built:</strong></p>
+                    <p>
+                        • Automatic research information assistant<br>
+                        • Batch document processing and conversion system<br>
+                        • Fast report and presentation creation workflow<br>
+                        • Quality content writing workflow, natural like human writing
+                    </p>
+                    <p><strong>Tools Currently Using:</strong></p>
+                    <p>
+                        • Automatic office document processing<br>
+                        • Digital design and content creation<br>
+                        • System integration for workflow automation
+                    </p>
+                </div>
+
+                <!-- VALUE -->
+                <div class="story-card">
+                    <h3><span class="emoji">💡</span> Business Value Delivered</h3>
+                    <p><strong>Time Savings:</strong></p>
+                    <p>
+                        • 4-hour tasks → now just 5 minutes<br>
+                        • Batch processing without manual work<br>
+                        • Automatic report/presentation generation
+                    </p>
+                    <p><strong>Improved Output Quality:</strong></p>
+                    <p>
+                        • Content with storytelling, empathy, natural tone<br>
+                        • Reduced errors in work process<br>
+                        • 1 person doing work of 2-3 people
+                    </p>
+                    <p><strong>Continuous Development:</strong></p>
+                    <p><em>Learning more to build more complex systems</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <span class="section-tag">Skills</span>
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">Skills refined through 7+ years of hands-on experience</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🎯 Performance Marketing <span class="skill-level">Advanced</span></h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Google Ads</span>
+                        <span class="skill-tag">Meta Ads</span>
+                        <span class="skill-tag">TikTok Ads</span>
+                        <span class="skill-tag">Zalo Ads</span>
+                        <span class="skill-tag">SEO/SEM</span>
+                        <span class="skill-tag">Email Marketing</span>
+                        <span class="skill-tag">A/B Testing</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📊 Data & Analytics <span class="skill-level">Advanced</span></h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Facebook Insights</span>
+                        <span class="skill-tag">ROAS Optimization</span>
+                        <span class="skill-tag">CPA/CTR Tracking</span>
+                        <span class="skill-tag">Budget Reconciliation</span>
+                        <span class="skill-tag">KPI Reporting</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📋 Planning & Strategy</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Market Research</span>
+                        <span class="skill-tag">Competitor Analysis</span>
+                        <span class="skill-tag">Content Strategy</span>
+                        <span class="skill-tag">Campaign Calendar</span>
+                        <span class="skill-tag">Budget Allocation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🛒 E-Commerce & Sales</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Conversion Optimization</span>
+                        <span class="skill-tag">Marketplace Management</span>
+                        <span class="skill-tag">Promotion Planning</span>
+                        <span class="skill-tag">Customer Journey</span>
+                        <span class="skill-tag">CRM Tools</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🤖 Tech Stack & Differentiators <span class="skill-level">Unique</span></h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">AI Agent Development</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">N8N Automation</span>
+                        <span class="skill-tag">Engineer Prompt</span>
+                        <span class="skill-tag">Zalo Mini App</span>
+                        <span class="skill-tag">Art Foundation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🏢 Industry Experience</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">E-commerce</span>
+                        <span class="skill-tag">Fashion</span>
+                        <span class="skill-tag">Cosmetics</span>
+                        <span class="skill-tag">Recruitment</span>
+                        <span class="skill-tag">Creative Education</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <div class="section-header">
+            <span class="section-tag">Experience</span>
+            <h2 class="section-title">Career Timeline</h2>
+            <p class="section-subtitle">7+ years journey in Digital Marketing</p>
+        </div>
+
+        <div class="timeline">
+            <!-- MAAC Vietnam -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-company">MAAC Vietnam</h3>
+                    <p class="timeline-role">Senior Digital Marketing | Creative Education Industry</p>
+                    <span class="timeline-achievement">🆕 Current Position</span>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Running ads to acquire quality leads for VFX, 3D Animation, Game Art & Design programs
+                            </li>
+                            <li>Coordinating with CS team for lead nurturing and conversion to students</li>
+                            <li>Handling technical activities: Zalo Mini App deployment</li>
+                            <li>Prompt Engineering - Creating prompt templates for team content preparation</li>
+                            <li>Implementing automation workflows</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-date">
+                    <span>03/2025 - Present</span>
+                </div>
+            </div>
+
+            <!-- Sieu Viet Group / ViecLam24H -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-company">Sieu Viet Group (ViecLam24H)</h3>
+                    <p class="timeline-role">Senior Digital Marketing | Recruitment Industry</p>
+                    <span class="timeline-achievement">🏆 Excellent Team Growing 2024</span>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Responsible for Digital operations of Marketing Team across 4 websites: Mywork,
+                                ViecTotNhat, TimViecNhanh, ViecLam24h</li>
+                            <li>Implementing Branding Campaigns & merging 4 websites into 1 new ViecLam24h</li>
+                            <li>Revamped SEO content structure and keyword strategy</li>
+                            <li>Collaborated with Cross-functional teams to align marketing campaigns with business
+                                objectives</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-date">
+                    <span>10/2023 - 02/2025</span>
+                </div>
+            </div>
+
+            <!-- Sakura Beauty Vietnam -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-company">Sakura Beauty Vietnam</h3>
+                    <p class="timeline-role">Senior Digital Marketing | Cosmetics Industry</p>
+                    <span class="timeline-achievement">🏆 Excellent Individual 2020</span>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Digital planning and ads implementation on Google, Facebook</li>
+                            <li>Sales primarily through website or direct traffic to stores</li>
+                            <li>Coordinating with Brand Manager on Ambassador Branding Campaigns (Thanh Hang, Lyly)</li>
+                            <li>Managing digital performance for 4 brands: Sakura, Hoa Anh Dao, Yumeisakura, Genki Derma
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-date">
+                    <span>06/2021 - 07/2023</span>
+                </div>
+            </div>
+
+            <!-- MARC Fashion -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-company">MARC Fashion</h3>
+                    <p class="timeline-role">Digital Marketing | Women's Fashion Industry</p>
+                    <span class="timeline-achievement">📈 200% Sales Growth • Budget $4-8K/month</span>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Promotion planning and e-commerce website setup</li>
+                            <li>Running Facebook ads with budget $4-8K/month</li>
+                            <li>Achieved revenue target of $170K USD/quarter from digital channels</li>
+                            <li>200% online sales growth in 2 years</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-date">
+                    <span>03/2019 - 02/2021</span>
+                </div>
+            </div>
+
+            <!-- Mekong Data -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3 class="timeline-company">Mekong Data (Enabay.com)</h3>
+                    <p class="timeline-role">Digital Marketing | Hong Kong E-commerce Market</p>
+                    <span class="timeline-achievement">🌏 International E-commerce Experience</span>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>E-commerce project similar to Tiki model for Hong Kong market</li>
+                            <li>3 main business categories: Tech, Fashion, Cosmetics</li>
+                            <li>Responsible for SEO and Google & Facebook ads</li>
+                            <li>Direct-to-Consumer model (not through sellers)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-date">
+                    <span>01/2018 - 12/2018</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Journey -->
+    <section id="learning">
+        <div class="section-header">
+            <span class="section-tag">Learning</span>
+            <h2 class="section-title">Learning Journey</h2>
+            <p class="section-subtitle">Continuously developing to create unique value</p>
+        </div>
+
+        <div class="learning-grid">
+            <div class="learning-card">
+                <div class="learning-icon">🤖</div>
+                <h3 class="learning-title">AI & Automation</h3>
+                <ul class="learning-topics">
+                    <li>
+                        AI Agent Development
+                        <span class="learning-status">In Progress</span>
+                    </li>
+                    <li>
+                        Prompt Engineering
+                        <span class="learning-status">In Progress</span>
+                    </li>
+                    <li>
+                        Python for Marketing Automation
+                        <span class="learning-status">In Progress</span>
+                    </li>
+                    <li>
+                        LLMs Integration (ChatGPT, Claude)
+                        <span class="learning-status">Applied</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="learning-card">
+                <div class="learning-icon">🎨</div>
+                <h3 class="learning-title">Art Foundation</h3>
+                <ul class="learning-topics">
+                    <li>
+                        2D Sketch & Drawing
+                        <span class="learning-status">In Progress</span>
+                    </li>
+                    <li>
+                        3D Modeling & Sculpting
+                        <span class="learning-status">Basic</span>
+                    </li>
+                    <li>
+                        Visual Design Fundamentals
+                        <span class="learning-status">In Progress</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3D Model Showcase -->
+        <div class="story-section" style="margin-top: 2rem;">
+            <div class="story-card" style="text-align: center;">
+                <h3><span class="emoji">🎮</span> First 3D Model - Learning at MAAC</h3>
+                <img src="image (2).png" alt="3D Model - Learning at MAAC"
+                    style="max-width: 100%; border-radius: 12px; margin: 1rem 0;">
+                <p><em>Learning project during 3D Modeling exploration at MAAC Vietnam</em></p>
+            </div>
+        </div>
+
+        <div class="learning-vision">
+            <p>
+                💡 <strong>Goal:</strong> Combining Marketing skills with AI and Creative
+                to become a <strong>Creative Technologist</strong> - creating marketing solutions
+                that are both data-effective and creatively deep.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-section">
+            <h2 class="contact-title">Let's Connect</h2>
+            <p class="contact-subtitle">Ready for new opportunities and exciting challenges</p>
+
+            <div class="contact-info">
+                <a href="tel:0916409074" class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+84 916.409.074</span>
+                </a>
+                <a href="mailto:tochanhtrungtct@gmail.com" class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <span>tochanhtrungtct@gmail.com</span>
+                </a>
+                <span class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>District 8, Ho Chi Minh City</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Tô Chánh Trung. Built with passion for Digital Marketing & Creative Technology.</p>
+    </footer>
+
+    <script>
+        // Smooth reveal on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section:not(.hero)').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease-out';
+            observer.observe(section);
+        });
+
+        // Skill tags hover effect
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', () => {
+                tag.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            tag.addEventListener('mouseleave', () => {
+                tag.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+
+</html>
